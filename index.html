@@ -35,8 +35,9 @@
 
     status.textContent = 'Downloading game assets...'
 
-    // Download valve.zip from the same origin (GitHub Pages / Cloudflare Pages)
-    const response = await fetch('./valve.zip')
+    // Download valve.zip from GitHub LFS
+    const ZIP_URL = 'https://media.githubusercontent.com/media/koiblue2800/cs16-browser/main/valve.zip'
+    const response = await fetch(ZIP_URL)
     const contentLength = response.headers.get('content-length')
     const total = parseInt(contentLength, 10)
     let received = 0
